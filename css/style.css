@@ -788,6 +788,13 @@
      font-size: 64px;
      color: #fff;
 }
+
+.cover-slides h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    color: rgb(253, 251, 251);
+}
  .cover-slides p{
      font-size: 18px;
      color: #fff;
@@ -2189,7 +2196,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{
