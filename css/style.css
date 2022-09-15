@@ -769,6 +769,13 @@
      -webkit-box-align: center;
      -ms-flex-align: center;
      align-items: center;
+     
+}
+.cover-slides .container > .row1 {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: top;
+    
 }
  .cover-slides .container > .row {
      height: 100%;
@@ -785,7 +792,7 @@
  .cover-slides h1{
      font-family: 'Poppins', sans-serif;
      font-weight: 500;
-     font-size: 64px;
+     font-size: 55px;
      color: #fff;
 }
 
