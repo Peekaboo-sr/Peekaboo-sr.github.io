@@ -1,5 +1,8 @@
 (function () {
-    var prices = {
+    // Change this number to apply the same percentage hike to every numeric price.
+    var priceHikePercentage = 0;
+
+    var productPrices = {
         'Honda EU 70is Generator': '₹ 2,51,039.00',
         'Honda GX 690 Engine': '₹ Contact us for price',
         'UMK425T U2ST Brush Cutter': '₹ 25,556.00',
@@ -37,12 +40,36 @@
         'Honda GXV 160 Engine': 'Contact us for price'
     };
 
-    document.querySelectorAll('.special-list .products-single').forEach(function (card) {
+    function applyPercentageHike(priceText, percentage) {
+        var numericText = priceText.replace(/[^0-9.]/g, '');
+
+        if (!numericText) {
+            return priceText;
+        }
+
+        var numericPrice = Number(numericText);
+
+        if (!Number.isFinite(numericPrice)) {
+            return priceText;
+        }
+
+        var adjustedPrice = numericPrice * (1 + (Number(percentage) || 0) / 100);
+        var formattedPrice = new Intl.NumberFormat('en-IN', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(adjustedPrice);
+
+        return (priceText.indexOf('₹') !== -1 ? '₹ ' : '') + formattedPrice;
+    }
+
+    document.querySelectorAll('.products-single').forEach(function (card) {
         var name = card.querySelector('.why-text h4');
         var price = card.querySelector('[data-product-price]');
+        var productName = name && name.textContent.trim();
+        var productPrice = productPrices[productName];
 
-        if (name && price && prices[name.textContent.trim()]) {
-            price.textContent = prices[name.textContent.trim()];
+        if (price && productPrice) {
+            price.textContent = applyPercentageHike(productPrice, priceHikePercentage);
         }
     });
 }());
