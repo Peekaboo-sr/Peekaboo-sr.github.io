@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin sign-in | RV Power</title>
+  <link rel="stylesheet" href="/site/style.css">
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="/"><strong>RV<span>POWER</span></strong></a>
+    <a href="/" class="button outline">View website</a>
+  </div></header>
+  <main class="wrap admin-sign-in">
+    <p class="eyebrow"><span></span> RV POWER ADMIN</p>
+    <h1>Sign in</h1>
+    <p>Enter your admin key to view website analytics.</p>
+    <form method="post" action="/admin/sign-in">
+      <label for="key">Admin key</label>
+      <input id="key" name="key" type="password" required maxlength="128" autocomplete="current-password">
+      <!--SIGN_IN_ERROR-->
+      <button type="submit" class="button red">Sign in</button>
+    </form>
+  </main>
+</body>
+</html>

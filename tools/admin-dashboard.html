@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin · Website analytics | RV Power</title><link rel="stylesheet" href="site/style.css"><script type="module" src="site/analytics.js"></script></head>
+<body><header><div class="wrap nav"><a class="brand" href="./"><strong>RV<span>POWER</span></strong></a><div class="admin-actions"><a href="./" class="button outline">View website</a><form method="post" action="/admin/sign-out"><button class="button dark">Sign out</button></form></div></div></header>
+<main class="wrap catalog"><p class="eyebrow"><span></span> RV POWER ADMIN</p><div class="section-head"><h1 style="font-size:clamp(2.5rem,5vw,4.5rem);margin:0">Website analytics</h1><button class="button outline" id="refresh">Refresh</button></div>
+<p>Last 30 days on this server. Counts are aggregated by date, event and model.</p>
+<p id="analytics-status" role="status"></p><section id="metrics" class="grid" aria-label="Traffic totals"></section>
+<h2 style="margin-top:35px;font-size:2.1rem">Model engagement</h2><table class="specs"><thead><tr><th scope="col">Model</th><th scope="col">Views</th><th scope="col">PDF clicks</th><th scope="col">Enquiry clicks</th></tr></thead><tbody id="models"></tbody></table>
+<h2 style="margin-top:35px;font-size:2.1rem">Daily page views</h2><table class="specs"><thead><tr><th scope="col">Date</th><th scope="col">Views</th></tr></thead><tbody id="days"></tbody></table></main></body></html>

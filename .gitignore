@@ -1,0 +1,4 @@
+.rv-power-analytics.sqlite3*
+__pycache__/
+.rv-power-admin-key
+.rv-power-razorpay.json
