@@ -1,0 +1,22 @@
+name = "rv-power-analytics"
+main = "worker.js"
+compatibility_date = "2026-11-25"
+workers_dev = true
+preview_urls = false
+
+[vars]
+STOREFRONT_ORIGIN = "https://rv-power.in"
+
+[assets]
+directory = ".assets"
+binding = "ASSETS"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rv-power-analytics"
+database_id = "bddc056b-f024-4391-8f1d-b435d0144c93"

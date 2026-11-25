@@ -2,3 +2,6 @@
 __pycache__/
 .rv-power-admin-key
 .rv-power-razorpay.json
+analytics/.assets/
+analytics/.wrangler/
+.rv-power-live-admin-key

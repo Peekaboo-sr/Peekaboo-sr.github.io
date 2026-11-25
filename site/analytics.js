@@ -6,6 +6,7 @@ const labels = {
   spec_download: 'Specification PDF clicks',
   contact_click: 'Enquiry clicks'
 };
+const storefront = new URL(document.querySelector('a.button[href]').href);
 const status = document.querySelector('#analytics-status');
 
 async function refresh() {
@@ -26,7 +27,7 @@ async function refresh() {
     document.querySelector('#metrics').innerHTML = Object.entries(labels).map(([event, label]) =>
       `<article class="card card-copy"><p>${label}</p><h3>${totals[event]}</h3></article>`).join('');
     document.querySelector('#models').innerHTML = [...models].sort((a,b) => b[1].product_view - a[1].product_view).map(([id, data]) =>
-      `<tr><th scope="row"><a class="text-link" href="./?model=${id}">${id.toUpperCase()}</a></th><td>${data.product_view}</td><td>${data.spec_download}</td><td>${data.contact_click}</td></tr>`).join('') || '<tr><td colspan="4">No model activity yet.</td></tr>';
+      `<tr><th scope="row"><a class="text-link" href="${new URL(`?model=${id}`, storefront).href}">${id.toUpperCase()}</a></th><td>${data.product_view}</td><td>${data.spec_download}</td><td>${data.contact_click}</td></tr>`).join('') || '<tr><td colspan="4">No model activity yet.</td></tr>';
     document.querySelector('#days').innerHTML = [...days].reverse().map(([day, views]) =>
       `<tr><th scope="row">${day}</th><td>${views}</td></tr>`).join('') || '<tr><td colspan="2">No page views yet.</td></tr>';
     status.textContent = `Updated at ${new Date().toLocaleTimeString()}`;
